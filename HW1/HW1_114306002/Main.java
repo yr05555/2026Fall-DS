@@ -15,11 +15,21 @@ public class Main {
 	public static double getBMI(String[] data) {
 		// 1. calculate the bmi 
 		// result bmi = weight(kg) / (height(m) * height(m))
-		return 0;
+		double weight = Double.parseDouble(data[0]);
+		double height = Double.parseDouble(data[1]) / 100.0;
+		return weight / (height * height);
 	}
 	
 	public static String getDiagnosis(double bmi) {
 		// 2. give comments depending on bmi
-        return "";
+		if (bmi >= 30) {
+			return "You are not in shape. Actually, you are not even close.";
+		} else if (bmi >= 26) {
+			return "To be honest, you are not in shape.";
+		} else if (bmi >= 20) {
+			return "You are in shape.";
+		} else {
+			return "You are under shape.";
+		}
 	}
 }
